@@ -1,8 +1,30 @@
 (.devops) samhmariam@DESKTOP-MFE15JA:~/DevOps_Microservices/project-ml-microservice-kubernetes$ ./run_kubernetes.sh 
-Error from server (AlreadyExists): pods "microproj" already exists
-NAME        READY   STATUS    RESTARTS   AGE
-microproj   1/1     Running   0          70s
+deployment.apps/microproj created
+NAME                         READY   STATUS              RESTARTS   AGE
+microproj-7dbb795c85-qf2nb   0/1     ContainerCreating   0          0s
+service/microproj exposed
+error: unable to forward port because pod is not running. Current status=Pending
+(.devops) samhmariam@DESKTOP-MFE15JA:~/DevOps_Microservices/project-ml-microservice-kubernetes$ kubectl get node
+NAME             STATUS   ROLES    AGE   VERSION
+docker-desktop   Ready    master   23h   v1.15.5
+(.devops) samhmariam@DESKTOP-MFE15JA:~/DevOps_Microservices/project-ml-microservice-kubernetes$ kubectl get pod
+NAME                         READY   STATUS    RESTARTS   AGE
+microproj-7dbb795c85-qf2nb   1/1     Running   0          27s
+(.devops) samhmariam@DESKTOP-MFE15JA:~/DevOps_Microservices/project-ml-microservice-kubernetes$ ./run_kubernetes.sh 
+Error from server (AlreadyExists): deployments.apps "microproj" already exists
+NAME                         READY   STATUS    RESTARTS   AGE
+microproj-7dbb795c85-qf2nb   1/1     Running   0          32s
+Error from server (AlreadyExists): services "microproj" already exists
 Forwarding from 127.0.0.1:8000 -> 80
 Forwarding from [::1]:8000 -> 80
 Handling connection for 8000
-Handling connection for 8000
+
+__________________________________________________________________________________________________________________
+
+(.devops) samhmariam@DESKTOP-MFE15JA:~/DevOps_Microservices/project-ml-microservice-kubernetes$ ./make_prediction.sh 
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
