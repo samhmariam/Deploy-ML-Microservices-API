@@ -1,8 +1,0 @@
-(.devops) samhmariam@DESKTOP-MFE15JA:~/DevOps_Microservices/project-ml-microservice-kubernetes$ ./run_kubernetes.sh 
-Error from server (AlreadyExists): pods "microproj" already exists
-NAME        READY   STATUS    RESTARTS   AGE
-microproj   1/1     Running   0          70s
-Forwarding from 127.0.0.1:8000 -> 80
-Forwarding from [::1]:8000 -> 80
-Handling connection for 8000
-Handling connection for 8000
